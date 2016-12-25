@@ -10,7 +10,7 @@ public class Util {
 
 	public static final String FCM_SENDER_ID = "90420728818";
 	public static final String FCM_SERVER_KEY = "AAAAFQ1-0_I:APA91bGeN0527Vs20_M_-yyqibddvDrlLQUGNc5YbORE9C8I4F5IlJ6lRFI277A3IXJqEAFBxbMUYjqkhdmJEAPsY1wXM7zSeElGeAB5kNo1ovgkjAgZOaI1gJrryQ2HY4SWGaeZcvnqwYqWNSfzxCwzopcLzmDG7Q";
-	public static final String toRegId = "\\topics\\message";
+	public static final String SAMPLE_REG_ID = "\\topics\\message";
 
 	// For the GCM connection
 	public static final String FCM_SERVER = "fcm-xmpp.googleapis.com";

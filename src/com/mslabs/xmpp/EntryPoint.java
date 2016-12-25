@@ -18,11 +18,8 @@ import com.mslabs.xmpp.util.Util;
  */
 public class EntryPoint {
 	public static void main(String[] args) throws SmackException, IOException {
-		final String fcmProjectSenderId = "90420728818";//args[0];
-		final String fcmServerKey = "AAAAFQ1-0_I:APA91bGeN0527Vs20_M_-yyqibddvDrlLQUGNc5YbORE9C8I4F5IlJ6lRFI277A3IXJqEAFBxbMUYjqkhdmJEAPsY1wXM7zSeElGeAB5kNo1ovgkjAgZOaI1gJrryQ2HY4SWGaeZcvnqwYqWNSfzxCwzopcLzmDG7Q";//args[1];
-		final String toRegId = "/topics/message";//args[2];
 
-		CcsClient ccsClient = CcsClient.prepareClient(fcmProjectSenderId, fcmServerKey, true);
+		CcsClient ccsClient = CcsClient.prepareClient(Util.FCM_SENDER_ID, Util.FCM_SERVER_KEY, true);
 
 		try {
 			ccsClient.connect();
@@ -34,7 +31,7 @@ public class EntryPoint {
 		String messageId = Util.getUniqueMessageId();
 		Map<String, String> dataPayload = new HashMap<String, String>();
 		dataPayload.put(Util.PAYLOAD_ATTRIBUTE_MESSAGE, "This is the simple sample message");
-		CcsOutMessage message = new CcsOutMessage(toRegId, messageId, dataPayload);
+		CcsOutMessage message = new CcsOutMessage(Util.SAMPLE_REG_ID, messageId, dataPayload);
 		String jsonRequest = MessageHelper.createJsonOutMessage(message);
 		ccsClient.send(jsonRequest);
 
